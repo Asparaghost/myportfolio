@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+        <title>Page Title</title>
+        <link rel="stylesheet" href="works.css">
+    </head>
+
+    <body>
+        <!-- <h1 class="title">Works</h1> -->
+        <button class="back" onclick="history.back()"><i class="fas fa-chevron-left"></i></button>
+        <div class="header">
+            <h1>WORKS<span> PORTFOLIO</span></h1>
+        </div>
+
+        <hr>
+        <hr>
+
+        <div class="categories">
+            <a href="">All</a>
+            <a href="">Illustration</a>
+            <a href="">Design & Branding</a>
+        </div>
+
+        <div class="grid-container" ondragstart="return false;">
+            <a href="work-info.html">
+                <div class="card" id="autoShow">
+                    <img src="assets/car.jpg" alt="project">
+                    <p class="proj-title">The amazing</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" id="autoShow">
+                    <img src="assets/wiki.png" alt="project">
+                    <p class="proj-title">The amazing</p>
+                </div>
+            </a>
+            <div class="card" id="autoShow">
+                <img src="assets/place1.png" alt="project">
+                <p class="proj-title">The amazing</p>
+            </div>
+            <div class="card" id="autoShow">
+                <img src="assets/place2.jpg" alt="project">
+                <p class="proj-title">The amazing</p>
+            </div>
+            <div class="card" id="autoShow">
+                <img src="assets/place3.jpg" alt="project">
+            </div>
+            <div class="card" id="autoShow">
+                <img src="assets/Unwind.png" alt="project">
+            </div>
+            <div class="card" id="autoShow">
+                <img src="assets/square.png" alt="project">
+            </div>
+        </div>
+
+        <button onclick="scrollToTop()" id="backToTop" title="Go to top"><i class="fas fa-angle-double-up"></i></button>
+
+
+        <footer>© Lei Faburada | 2025 All Rights Reserved</footer>
+
+    </body>
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const modal = document.getElementById("imgModal");
+            const modalImg = document.getElementById("modalImg");
+            const closeModal = document.querySelector(".close");
+        
+            function disableScroll() {
+                document.body.style.overflow = "hidden";
+            }
+        
+            function enableScroll() {
+                document.body.style.overflow = "auto";
+            }
+        
+            document.querySelectorAll(".card img, .proj img").forEach(img => {
+                img.addEventListener("click", function () {
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                    disableScroll();
+                });
+            });
+            
+        
+            closeModal.addEventListener("click", function () {
+                modal.style.display = "none";
+                enableScroll();
+            });
+        
+            modal.addEventListener("click", function (event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                    enableScroll();
+                }
+            });
+        
+            document.querySelectorAll("img").forEach(img => {
+                img.addEventListener("contextmenu", function (event) {
+                    event.preventDefault();
+                });
+            });
+
+            document.querySelectorAll("img").forEach(img => {
+                img.setAttribute("draggable", false);
+            });
+        
+            document.addEventListener("keydown", function (event) {
+                if (event.ctrlKey && (event.key === "s" || event.key === "S" || event.key === "u" || event.key === "U")) {
+                    event.preventDefault();
+                }
+            });
+        });
+    </script> -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const elementsToReveal = document.querySelectorAll(".card, .proj");
+    
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                        observer.unobserve(entry.target);
+                    } 
+                });
+            }, { threshold: 0.1 });
+    
+            elementsToReveal.forEach(el => observer.observe(el));
+        });
+    </script>
+
+    <script>
+        // Show button when user scrolls down 200px
+        window.onscroll = function () {
+            const btn = document.getElementById("backToTop");
+            btn.style.display = (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200)
+                ? "block"
+                : "none";
+        };
+
+        // Scroll to top when button clicked
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+        
+        
+        
+</html>
