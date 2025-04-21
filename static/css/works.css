@@ -17,7 +17,7 @@ html {
 
 body {
     background-color: #f6f4dc;
-    cursor: url("assets/cursor.png"), auto!important;
+    cursor: url("../images/cursor.png"), auto!important;
 }
 
 button {

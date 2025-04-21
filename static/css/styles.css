@@ -194,7 +194,8 @@ header .navbar #logo {
 }
 
 .navbar a:hover {
-    color: #fff;
+    color: #f16838;
+    font-style: italic;
 }
 
 .navbar .user-choice {
