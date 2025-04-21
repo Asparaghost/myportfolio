@@ -15,7 +15,7 @@
             <nav class="navbar">
                 <a href="{% url 'index' %}"><img src="#" alt="logo" id="logo"/></a>
                 <ul class="menu-links">
-                    <li><a href="works.html">Works</a></li>
+                    <li><a href="{% url 'works' %}">Works</a></li>
                 </ul>
             </nav>
         </header>
@@ -44,9 +44,10 @@
                 <p class="by-person">- Vincent van Gogh</p>
             </div>
 
+        {% for info in informations %}
         <section id="me">
             <div class="left">
-                <img src="assets/person.png" alt="me">
+                <img src="{{ info.image.url }}" alt="me">
             </div>
             <div class="right">
                 <div class="right-header">
@@ -55,24 +56,20 @@
                 </div>
                 <br/><br/>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
-                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
-                    culpa qui officia deserunt mollit anim id est laborum.
+                    {{ info.description }}
                 </p>
                 <br/><br/><br/>
                 <div class="right-header">
                     <h3>Let's connect!</h3>
                     <div class="connect">
-                        <a href="#"><i class="fab fa-linkedin"><span>&nbsp;linkedin</span></i></a>
-                        <a href="#"><i class="fab fa-facebook-square"><span>&nbsp;facebook</span></i></a>
-                        <i class="fas fa-envelope"><span>&nbsp;lei@123</span></i>
+                        <a href="{{ info.linkedin_url }}"><i class="fab fa-linkedin"><span>&nbsp;linkedin</span></i></a>
+                        <a href="{{ info.facebook_url }}"><i class="fab fa-facebook-square"><span>&nbsp;facebook</span></i></a>
+                        <i class="fas fa-envelope"><span>&nbsp;{{ info.email_add }}</span></i>
                     </div>
                 </div>
             </div>
         </section>
+        {% endfor %}
 
         <!-- <section id="skills">
             <div>

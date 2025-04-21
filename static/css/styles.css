@@ -294,13 +294,13 @@ section#me .left {
 }
 
 .connect a i, .connect i {
-    font-size: 1rem;
+    font-size: 1.4rem;
     padding-right: 20px;
     color: #339551;
 }
 
 .connect a i span, .connect i span {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     padding-right: 20px;
     color: #e56131;
     font-family: "Combo", system-ui;

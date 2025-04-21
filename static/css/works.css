@@ -242,3 +242,8 @@ footer {
     font-family: "Combo", system-ui;
     border-radius: 4px;
 }
+
+#active {
+    background-color: #e1dc53;
+    /* color: #bee0c7; */
+}
