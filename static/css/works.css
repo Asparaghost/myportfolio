@@ -7,6 +7,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    cursor: url("../images/cursor.png"), auto!important;
 }
 
 html {
@@ -26,6 +27,14 @@ button {
 
 button:hover, .close {
     cursor: url("assets/cursor.png"), auto!important;
+}
+
+.back:hover {
+    cursor: url("../images/cursor.png"), auto!important;
+}
+
+.categories a {
+    cursor: url("../images/cursor.png"), auto!important;
 }
 
 .title {
