@@ -10,6 +10,7 @@
     </head>
 
     <body>
+        <div class="page-content">
         <header id="navbar">
             <nav class="navbar">
                 <ul class="menu-links">
@@ -29,7 +30,7 @@
         <div class="categories">
             <a href="?category=All" {% if active_category == 'All' %}id="active"{% endif %}>All</a>
             <a href="?category=Illustration" {% if active_category == 'Illustration' %}id="active"{% endif %}>Illustration</a>
-            <a href="?category=Design & Branding" {% if active_category == 'Design & Branding' %}id="active"{% endif %}>Design & Branding</a>
+            <a href="?category=Design%20%26%20Branding" {% if active_category == 'Design & Branding' %}id="active"{% endif %}>Design & Branding</a>
         </div>
         
 
@@ -55,7 +56,7 @@
         </div>
 
         <button onclick="scrollToTop()" id="backToTop" title="Go to top"><i class="fas fa-angle-double-up"></i></button>
-
+        </div>
 
         <footer>© Lei Faburada | 2025 All Rights Reserved</footer>
 

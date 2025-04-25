@@ -12,7 +12,7 @@ def index(request):
 
 
 def works(request):
-    category = request.GET.get('category')  # get ?category=Design from URL
+    category = request.GET.get('category')  
     if category and category != 'All':
         works = Project.objects.filter(category=category)
     else:
