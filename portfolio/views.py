@@ -12,9 +12,14 @@ def index(request):
 
 
 def works(request):
-    works = Project.objects.all() 
+    category = request.GET.get('category')  # get ?category=Design from URL
+    if category and category != 'All':
+        works = Project.objects.filter(category=category)
+    else:
+        works = Project.objects.all()
     context = {
-        'works':works
+        'works': works,
+        'active_category': category or 'All'
     }
     return render(request, "portfolio/works.html", context)
 

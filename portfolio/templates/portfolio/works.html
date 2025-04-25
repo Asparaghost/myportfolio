@@ -10,7 +10,14 @@
     </head>
 
     <body>
-        <!-- <h1 class="title">Works</h1> -->
+        <header id="navbar">
+            <nav class="navbar">
+                <ul class="menu-links">
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                </ul>
+            </nav>
+        </header>
+
         <button class="back" onclick="history.back()"><i class="fas fa-chevron-left"></i></button>
         <div class="header">
             <h1>WORKS<span> PORTFOLIO</span></h1>
@@ -20,10 +27,11 @@
         <hr>
 
         <div class="categories">
-            <a href="" id="active">All</a>
-            <a href="">Illustration</a>
-            <a href="">Design & Branding</a>
+            <a href="?category=All" {% if active_category == 'All' %}id="active"{% endif %}>All</a>
+            <a href="?category=Illustration" {% if active_category == 'Illustration' %}id="active"{% endif %}>Illustration</a>
+            <a href="?category=Design & Branding" {% if active_category == 'Design & Branding' %}id="active"{% endif %}>Design & Branding</a>
         </div>
+        
 
         <div class="grid-container" ondragstart="return false;">
             {% for proj in works %}

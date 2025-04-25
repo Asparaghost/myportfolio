@@ -123,7 +123,7 @@ h3 {
 
 
 .proj-desc {
-    padding: min(50px, 7%) min(50px, 7%) 10px min(50px, 7%);
+    padding: min(65px, 7%) min(50px, 7%) 10px min(50px, 7%);
     display: flex;
     width: 100%;
     font-family: "Combo", system-ui;
@@ -226,6 +226,9 @@ footer {
     padding: 8px 0;
     font-size: 13px;
     margin-top: 30px;
+    bottom: 0px;
+    position: absolute;
+    width: 100vw;
 }
 
 #backToTop {
@@ -288,4 +291,63 @@ footer {
         /* color: #266533; */
         letter-spacing: 2px;
     }
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* padding: 10px; */
+    /* background-color: #191e29; */
+    transition: background-color 0.3s ease;
+    font-family: "Combo", system-ui;
+    font-size: 25px;
+}
+
+header .navbar {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 95%;
+    margin: 0 auto;
+    padding-top: 15px;
+}
+
+header .navbar #logo {
+    height: 40px;
+    width: auto;
+    padding-bottom: 10px;
+}
+
+.navbar .menu-links {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.navbar a {
+    color: #266533;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.navbar a:hover {
+    color: #f16838;
+    font-style: italic;
+}
+
+.navbar .user-choice {
+    border: 1px solid #ffffff;
+    /* border-radius: 8px; */
+    padding: 3px 8px;
+}
+
+.navbar .user-choice:hover {
+    border: 1px solid #01c38d;
+    color: #fff;
+    /* border-radius: 8px; */
+    padding: 3px 8px;
+    background-color: #01c38d;
 }

@@ -22,9 +22,16 @@ class Project(models.Model):
     PERSONAL = 'Personal'
     COMMISSION = 'Commission'
 
+    ILLUSTRATION = 'Illustration'
+    DESIGN = 'Design & Branding'
+
     CHOICE_PROJECT = (
         (PERSONAL, 'Personal'),
         (COMMISSION, 'Commission'),
+    )
+    CHOICE_CATEGORY = (
+        (ILLUSTRATION, 'Illustration'),
+        (DESIGN, 'Design & Branding'),
     )
     proj_id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=100, verbose_name="Title")
@@ -32,6 +39,7 @@ class Project(models.Model):
     proj_desc = models.TextField(verbose_name="Description")
     scope = models.TextField(verbose_name="Project Scope")
     proj_type = models.CharField(max_length=20, choices=CHOICE_PROJECT, default=COMMISSION, verbose_name="Project Type")
+    category = models.CharField(max_length=20, choices=CHOICE_CATEGORY, default=ILLUSTRATION, verbose_name="Project Category")
     proj_img = models.ManyToManyField('ProjectImage', blank=True, verbose_name="Project Image(s)")
     year = models.CharField(max_length=4, verbose_name="Year")
 
