@@ -332,5 +332,5 @@ html, body {
 }
 
 .page-content {
-    min-height: calc(100vh - 50px); /* Adjust 50px to your footer's height */
+    min-height: calc(100vh - 50px); 
 }
