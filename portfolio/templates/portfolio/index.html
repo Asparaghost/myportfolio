@@ -10,10 +10,10 @@
         <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     </head>
 
-    <body style="background-color: #f6f4dc;">
+    <body>
         <header id="navbar">
             <nav class="navbar">
-                <a href="{% url 'index' %}"><img src="#" alt="logo" id="logo"/></a>
+                <a href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt="logo" id="logo"/></a>
                 <ul class="menu-links">
                     <li><a href="{% url 'works' %}">Works</a></li>
                 </ul>
@@ -91,6 +91,10 @@
             <i class="fas fa-cog spin"></i>
         </div>
         </section> -->
+        <video id="bg-video" autoplay muted loop>
+            <source src="{% static 'videos/bg-video.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
         <footer>© Lei Faburada | 2025 All Rights Reserved</footer>
     </body>

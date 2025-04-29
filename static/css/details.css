@@ -83,10 +83,11 @@ h3 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 100px;
+    font-size: 200px;
     opacity: 10%;
     white-space: nowrap;
     cursor: default;
+    z-index: 10;
 }
 
 .modal {
