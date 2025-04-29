@@ -1,5 +1,6 @@
 from django.db import models
 from django_resized import ResizedImageField
+from django.core import signing
 
 # Create your models here.
 class Information(models.Model):
@@ -46,6 +47,9 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title
+    
+    def get_hashed_id(self):
+        return signing.dumps(self.proj_id)
     
     class Meta:
         db_table = "projects"

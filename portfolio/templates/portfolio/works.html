@@ -37,7 +37,7 @@
 
         <div class="grid-container" ondragstart="return false;">
             {% for proj in works %}
-                <a href="{% url 'proj_info' proj.proj_id %}">
+                <a href="{% url 'proj_info' proj_hash=proj.get_hashed_id %}">
                     <div class="card" id="autoShow">
                         {% with proj.proj_img.all|first as first_image %}
                             <img src="{{ first_image.proj_img.url }}" alt="project">

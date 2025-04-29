@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
+from django.core.signing import BadSignature
+from django.core import signing
 from .models import *
 
 # Create your views here.
@@ -24,9 +26,14 @@ def works(request):
     return render(request, "portfolio/works.html", context)
 
 
-def proj_info(request, proj_id):
-    project = Project.objects.get(proj_id=proj_id)
+def proj_info(request, proj_hash):
+    try:
+        proj_id = signing.loads(proj_hash)
+        project = Project.objects.get(proj_id=proj_id)
+    except (BadSignature, Project.DoesNotExist):
+        return HttpResponse("Invalid project link", status=404)
+
     context = {
-        'project' : project,
+        'project': project,
     }
     return render(request, "portfolio/details.html", context)
