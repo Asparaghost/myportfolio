@@ -284,6 +284,30 @@ footer {
     background: #266533; 
 }
 
+
+@media (max-width: 750px) {
+    .modal h1 {
+        font-size: 120px;
+    }
+    
+    .container .proj img {
+        width: 70vw;
+        height: auto;
+        margin: 20px 10px 10px 10px;
+    }
+}
+
+@media (max-width: 580px) {
+    .modal h1 {
+        font-size: 80px;
+    }
+    .container .proj img {
+        width: 80vw;
+        height: auto;
+        margin: 20px 10px 10px 10px;
+    }
+}
+
 @media (max-width: 540px) {
     .proj-desc {
         padding: min(50px, 7%) min(50px, 7%) 10px min(50px, 7%);
@@ -310,7 +334,6 @@ footer {
         letter-spacing: 2px;
     }
 }
-
 
 header {
     position: fixed;
