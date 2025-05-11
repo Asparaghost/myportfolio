@@ -247,6 +247,10 @@ footer {
     transition: opacity 0.3s ease;
 }
 
+.formatted-paragraph {
+    white-space: pre-line;
+    font-family: inherit;
+}
 
 ::-webkit-scrollbar {
     width: 10px;
