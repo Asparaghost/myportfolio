@@ -219,6 +219,22 @@ hr {
     opacity: 15%;
 }
 
+.card h3, .proj h3 {
+    user-select: none;
+    -webkit-user-select: none; 
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.modal h1, .modal h1 {
+    user-select: none;
+    -webkit-user-select: none; 
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+
+
 footer {
     color: #f16838;
     background-color: #e1dc53;

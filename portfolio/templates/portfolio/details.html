@@ -85,13 +85,17 @@
                 document.body.style.overflow = "auto";
             }
         
-            document.querySelectorAll(".card img, .proj img").forEach(img => {
-                img.addEventListener("click", function () {
-                    modal.style.display = "block";
-                    modalImg.src = this.src;
-                    disableScroll();
+            document.querySelectorAll(".card, .proj").forEach(container => {
+                container.addEventListener("click", function () {
+                    const img = this.querySelector("img");
+                    if (img) {
+                        modal.style.display = "block";
+                        modalImg.src = img.src;
+                        disableScroll();
+                    }
                 });
             });
+
             
         
             closeModal.addEventListener("click", function () {
